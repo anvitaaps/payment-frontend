@@ -1,0 +1,67 @@
+<!-- <p>create-invoice works!</p> -->
+<div class="main-div">
+    <mat-card class="example-card">
+        <!-- <img src="/assets/lsourceablebluelogo.png" style="width:100%"> -->
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>CREATE INVOICE</mat-card-title>
+          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+        </mat-card-header>
+        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        <mat-card-content class="mt-4">
+            <form [formGroup]="invoiceForm">
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Name</mat-label>
+                        <input matInput placeholder="Customer Name" formControlName="customerName" onkeypress='return (event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || event.key === "Backspace" || event.key === "Delete" || event.key == "ArrowRight " || event.key == "ArrowLeft" || event.key === "Tab" || event.charCode == 46 || event.charCode == 32'>
+                        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Email</mat-label>
+                        <input matInput placeholder="Customer Email" formControlName="customerEmail">
+                        <mat-icon matSuffix>mail</mat-icon>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Phone</mat-label>
+                        <input matInput placeholder="Customer Phone" formControlName="customerPhone" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.key === "Backspace" || event.key === "Delete" || event.key == "ArrowRight " || event.key == "ArrowLeft" || event.key === "Tab" || event.charCode == 46 || event.charCode == 43 || event.charCode == 44'>
+                        <mat-icon matSuffix>phone</mat-icon>
+                    </mat-form-field>
+                </p>
+
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Customer Address</mat-label>
+                        <input matInput placeholder="Customer Address" formControlName="customerAddress">
+                        <mat-icon matSuffix>account_balance</mat-icon>
+                    </mat-form-field>
+                </p>
+                
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Amount</mat-label>
+                        <input matInput placeholder="Amount" formControlName="amount" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.key === "Backspace" || event.key === "Delete" || event.key == "ArrowRight " || event.key == "ArrowLeft" || event.key === "Tab" || event.charCode == 46'>
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </p>
+              
+                <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Service</mat-label>
+                        <input matInput placeholder="Service" formControlName="service">
+                        <mat-icon matSuffix>straighten</mat-icon>
+                    </mat-form-field>
+                </p>
+                
+            </form>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button (click)="create_invoice()" class="generate-button" [disabled]="invoiceForm.invalid">GENERATE INVOICE</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

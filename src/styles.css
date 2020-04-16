@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+.logo {
+    width: 100%;
+}
+
+.mat-toolbar.mat-primary {
+    background-color: #0b9bdb !important;
+}
