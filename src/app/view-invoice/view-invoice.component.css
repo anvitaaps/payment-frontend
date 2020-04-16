@@ -62,16 +62,6 @@
     font-weight: 300;
 }
 
-.red-text {
-  color: red;
-  font-weight: bold;
-}
-
-.green-text {
-  color: green;
-  font-weight: bold;
-}
-
 .content-center {
   justify-content: center;
 }

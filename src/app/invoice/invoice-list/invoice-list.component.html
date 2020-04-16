@@ -1,0 +1,67 @@
+<mat-card class="example-card">
+    <div class="example-container">
+        <table mat-table [dataSource]="dataSource">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="invoice_id">
+            <th mat-header-cell *matHeaderCellDef> Invoice ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.invoice_id}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="customer_name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.customer_name}} </td>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="customer_phone">
+            <th mat-header-cell *matHeaderCellDef> Phone </th>
+            <td mat-cell *matCellDef="let element"> {{element.customer_phone}} </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="customer_email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let element"> {{element.customer_email}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="customer_address">
+            <th mat-header-cell *matHeaderCellDef> Address </th>
+            <td mat-cell *matCellDef="let element"> {{element.customer_address}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="amount">
+            <th mat-header-cell *matHeaderCellDef> Amount </th>
+            <td mat-cell *matCellDef="let element"> ${{element.amount}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="service">
+            <th mat-header-cell *matHeaderCellDef> Service </th>
+            <td mat-cell *matCellDef="let element"> {{element.service}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="transaction_id">
+            <th mat-header-cell *matHeaderCellDef> Transaction ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.transaction_id}} </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element">
+                <span [ngClass]="(element.status=='Pending')?'red-text':'green-text'">{{ element.status == 'Pending' ? 'Payment Pending' : 'Transaction Successfull' }}</span>
+           </td>
+          </ng-container>
+    
+          <ng-container matColumnDef="invoice">
+            <th mat-header-cell *matHeaderCellDef> Invoice </th>
+            <td mat-cell *matCellDef="let element">
+                <a (click)="view_invoice(element.invoice_id)">View</a>
+           </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+</mat-card>

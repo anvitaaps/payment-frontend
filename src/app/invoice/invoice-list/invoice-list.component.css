@@ -1,0 +1,19 @@
+.example-container {
+    height: 400px;
+    overflow: auto;
+}
+
+.example-card {
+    padding:2% !important;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-header-cell {
+    font-weight: 900;
+    line-height: 3rem;
+    background-color: lightgray;
+    font-size: 0.8rem;
+}

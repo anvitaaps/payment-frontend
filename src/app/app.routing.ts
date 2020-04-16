@@ -11,14 +11,14 @@ export const AppRoutes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-      {
-        path: '**',
-        redirectTo: '/create-invoice',
-        pathMatch: 'full'
-      },
+      // {
+      //   path: '**',
+      //   redirectTo: '/create-invoice',
+      //   pathMatch: 'full'
+      // },
       {
         path: '',
-        redirectTo: '/create-invoice',
+        redirectTo: '/invoice',
         pathMatch: 'full'
       },
       {
@@ -32,7 +32,7 @@ export const AppRoutes: Routes = [
       },
       // { path: 'invoice', component: CreateInvoiceComponent },
       {
-        path: 'create-invoice',
+        path: 'invoice',
         loadChildren: () => import('./invoice/invoice.module').then(m => m.InvoiceModule)
       }
     ]

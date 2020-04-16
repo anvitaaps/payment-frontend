@@ -8,6 +8,7 @@ import { InvoiceRoutes } from './invoice.routing';
 import { CreateInvoiceComponent } from './create-invoice/create-invoice.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatCard, MatCardModule, MatProgressSpinnerModule } from '@angular/material';
+import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 
 @NgModule({
   imports: [
@@ -19,6 +20,6 @@ import { MatCard, MatCardModule, MatProgressSpinnerModule } from '@angular/mater
     MatProgressSpinnerModule,
     RouterModule.forChild(InvoiceRoutes)
   ],
-  declarations: [CreateInvoiceComponent]
+  declarations: [CreateInvoiceComponent, InvoiceListComponent]
 })
 export class InvoiceModule {}

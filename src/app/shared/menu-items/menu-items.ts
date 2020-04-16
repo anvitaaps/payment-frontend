@@ -9,6 +9,7 @@ export interface Menu {
 
 const MENUITEMS = [
   { state: 'create-invoice', name: 'Create Invoice', type: 'link', icon: 'all_inclusive' },
+  { state: 'invoice-list', name: 'Invoice List', type: 'link ', icon: 'table' },
   { state: 'dashboard', name: 'Dashboard', type: 'link', icon: 'av_timer' },
   { state: 'button', type: 'link', name: 'Buttons', icon: 'crop_7_5' },
   { state: 'grid', type: 'link', name: 'Grid List', icon: 'view_comfy' },
