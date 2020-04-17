@@ -32,14 +32,16 @@ export class CreateInvoiceComponent implements OnInit {
 
   create_invoice() {
     console.log(this.invoiceForm);
-    
+    var d = new Date();
+    var n = d.getMilliseconds();
     let data = {
         customer_name: this.invoiceForm.value.customerName,
         customer_phone: this.invoiceForm.value.customerPhone,
         customer_email: this.invoiceForm.value.customerEmail,
         customer_address: this.invoiceForm.value.customerAddress,
         amount: this.invoiceForm.value.amount,
-        service: this.invoiceForm.value.service
+        service: this.invoiceForm.value.service,
+        invoice_date: d
     }
     this.httpservice.post(this.url+'create_invoice', data).subscribe((res)=> {
       // this.isLoader = false;

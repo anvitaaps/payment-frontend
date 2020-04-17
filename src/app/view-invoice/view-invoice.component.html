@@ -3,61 +3,100 @@
     <mat-card class="example-card">
         
         <mat-card-header>
-            <img src="/assets/images/starkflow_login.png">
-            
-          <!-- <div mat-card-avatar class="example-header-image"></div> -->
-          <!-- <mat-card-title>INVOICE ID: </mat-card-title> -->
-          <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+            <!-- <div class="section top-section grade-3"> -->
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="pb-4">
+                <div fxLayout="col" fxFlex="50" class="heading"><h3>INVOICE</h3></div>
+                <div fxLayout="col" fxFlex="50" class="heading" fxLayoutAlign="end">
+                    <img class="header-image" src="/assets/images/stark-logo.png">
+                </div>
+            </div>  
+            <!-- </div> -->
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="mt-4">
+                <div fxLayout="col" fxFlex="70" class="heading">
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100">
+                        <div fxLayout="col" fxFlex="50" class="heading">DATE</div>
+                        <div fxLayout="col" fxFlex="50" class="heading">INVOICE NO</div>
+                    </div>
+                </div>
+                <div fxLayout="col" fxFlex="30" class="heading"></div>
+            </div>  
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="mt-2 pb-4">
+                <div fxLayout="col" fxFlex="70" class="heading">
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100">
+                        <div fxLayout="col" fxFlex="50" class="heading">{{invoice.invoice_date ? (invoice.invoice_date | date : 'MMM d, y, h:mm a') : 'No date'}} </div>
+                        <div fxLayout="col" fxFlex="50" class="heading">{{ invoice ? invoice.invoice_id : '' }}</div>
+                    </div>
+                </div>
+                <div fxLayout="col" fxFlex="30" class="heading"></div>
+            </div>  
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="mt-4">
+                <div fxLayout="col" fxFlex="70" class="heading">
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100">INVOICE TO</div>
+                </div>
+            </div>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="mt-2 pb-4">
+                <div fxLayout="col" fxFlex="70" class="heading">
+                    <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100">{{ invoice ? invoice.customer_name : '' }}</div>
+                </div>
+            </div>
+            <img src="https://uploads-ssl.webflow.com/5e89c00abebe7dcfb5042125/5e89c00a0b4db15efaa88834_wave-bottom-haze.svg" class="wave-bottom">
         </mat-card-header>
-        <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+        
         <mat-card-content class="mt-4">
-            <div fxLayout="row" fxLayoutWrap="wrap" class="content-center invoice-heading">
-               <u>CUSTOMER INVOICE</u>
+            <div fxLayout="row" fxLayoutWrap="wrap" class="invoice-heading">
+               DESCRIPTION
             </div>
+            <hr>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Invoice ID :</div>
-                <div fxLayout="col" fxFlex="50">{{ invoice ? invoice.invoice_id : '' }}</div>
-            </div>
-            <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Customer Name :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Customer Name </div>
                 <div fxLayout="col" fxFlex="50" class="data">{{ invoice ? invoice.customer_name : '' }}</div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Customer Email :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Customer Email </div>
                 <div fxLayout="col" fxFlex="50" class="data">{{ invoice ? invoice.customer_email : '' }}</div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Customer Phone :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Customer Phone </div>
                 <div fxLayout="col" fxFlex="50" class="data">{{ invoice ? invoice.customer_phone : '' }}</div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Customer Address :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Customer Address </div>
                 <div fxLayout="col" fxFlex="50" class="data">{{ invoice ? invoice.customer_address : '' }}</div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Amount :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Amount </div>
                 <div fxLayout="col" fxFlex="50" class="data">{{ invoice ? '$'+invoice.amount : '' }}</div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Service :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Service </div>
                 <div fxLayout="col" fxFlex="50" class="data">{{ invoice ? invoice.service : '' }}</div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Transaction ID :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Transaction ID </div>
                 <div fxLayout="col" fxFlex="50"><span *ngIf="invoice?.status != 'Pending'">{{ invoice?.transaction_id}}</span></div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap">
-                <div fxLayout="col" fxFlex="50" class="heading">Status :</div>
+                <div fxLayout="col" fxFlex="50" class="heading">Status </div>
                 <div fxLayout="col" fxFlex="50"><span [ngClass]="(invoice?.status=='Pending')?'red-text':'green-text'">{{ invoice?.status != 'Pending' ? 'Transaction Successfull' : 'Payment Pending' }}</span></div>
             </div>
             <div fxLayout="row" fxLayoutWrap="wrap" *ngIf="invoice?.status == 'Successfull'">
                 <a (click)="view_receipt()"><u>View Receipt</u></a>
             </div>
         </mat-card-content>
+        <!-- <hr> -->
         <mat-card-actions *ngIf="invoice?.status == 'Pending'">
-            <div align="center">
-                <button mat-button class="pay-button" (click)="pay()">PAY</button>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="pt-2 pb-2">
+                <div fxLayout="col" fxFlex="55" fxLayoutAlign="end">
+                    <img class="footer-image" src="/assets/images/stark-logo.png" style="width:20%">
+                </div>
+                <div fxLayout="col" fxFlex="45" fxLayoutAlign="end" class="mr-4">
+                    <a class="mr-2">starkflow.com</a>
+                </div>
             </div>
         </mat-card-actions>
     </mat-card>
+</div>
+
+<div class="bottom-div" align="center">
+    <button mat-button class="pay-button" (click)="pay()">PAY</button>
 </div>

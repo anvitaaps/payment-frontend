@@ -72,7 +72,7 @@ export class ViewInvoiceComponent implements OnInit {
     },
     (error)=>{
         console.log(error);
-        // window.open('http://localhost:3000/checkouts/new');
+        window.open('http://localhost:3000/checkouts/new');
     });
   }
 
