@@ -1,0 +1,70 @@
+<section class="background-content">
+
+    <div class="container-fluid ">
+        <div class="row logo-class">
+            <div class="col-lg-7" fxShow.lt-md="false" fxShow="true">
+                <div class="logo">
+                    <img src="/assets/images/stark-logo.png" alt="Artivatic.ai Logo" height="75">
+                    <h1 class="my-3 display-3 text-white">Payment Admin</h1>
+                </div>
+            </div>
+            <div align="center" class="row" fxShow.gt-md="false" fxShow="true">
+                <img src="/assets/images/stark-logo.png" alt="Artivatic.ai Logo" height="75">
+            </div>
+            <div class="col-lg-5 main-div" align="center">
+                <mat-card class="example-card center">
+                    <mat-card-header>
+                        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                        <mat-card-title>LOGIN</mat-card-title>
+                        <!-- <mat-card-subtitle>Dog Breed</mat-card-subtitle> -->
+                    </mat-card-header>
+                    <mat-card-content class="mt-4">
+                        <form [formGroup]="loginForm">
+                            <p>
+                                <mat-form-field appearance="outline">
+                                    <mat-label>Email</mat-label>
+                                    <input matInput placeholder="Customer Email" formControlName="email">
+                                    <mat-icon matSuffix>mail</mat-icon>
+                                </mat-form-field>
+                            </p>  
+                            <p>
+                                <mat-form-field appearance="outline">
+                                  <mat-label>Password</mat-label>
+                                  <input matInput placeholder="Password" formControlName="password">
+                                  <mat-icon matSuffix>vpn_key</mat-icon>
+                                </mat-form-field>
+                            </p> 
+                        </form>
+                    </mat-card-content>
+                    <button mat-button class="primary-button mt-2 mb-4" (click)="authenticate()">LOGIN</button>
+                </mat-card>
+            </div>
+           
+            <!-- <div class="col-lg-5 login-panel h-100">
+
+                <div class="d-flex justify-content-center" style="margin-top: 45%;">
+                    
+                    <h2 class="custom-text-color"><b><u>LOGIN</u></b></h2>
+                  
+
+                </div>
+                <div class="login text-center w-50 mx-auto">
+                    <div class="form-group">
+                        <input type="email" value="admin" class="form-control custom-input-background-color" id="email"
+                            placeholder="Email">
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="password" class="form-control custom-input-background-color"  placeholder="Password">
+                    </div>
+                   
+
+                    <button type="submit" class="btn btn-light w-100 custom-text-color font-weight-medium my-4" style="font-size: 1.5em;" (click)="authenticate();">Login</button>
+
+                </div>
+
+
+            </div> -->
+        </div>
+    </div>
+
+</section>

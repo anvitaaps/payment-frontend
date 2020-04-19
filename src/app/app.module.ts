@@ -18,6 +18,7 @@ import { DemoMaterialModule } from './demo-material-module';
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
-    ViewInvoiceComponent
+    ViewInvoiceComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,7 @@ import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
     FlexLayoutModule,
     HttpClientModule,
     SharedModule,
+    FlexLayoutModule,
     RouterModule.forRoot(AppRoutes, { useHash: true })
   ],
   providers: [

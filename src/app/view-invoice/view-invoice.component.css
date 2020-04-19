@@ -29,12 +29,6 @@
       width: 100%;
   }
   
-  .mat-button {
-      width: 100%;
-      background: #5CD493;
-      color: white;
-  }
-  
 .mat-card .mat-card-header {
       padding: 8%;
       overflow: hidden;
@@ -104,4 +98,9 @@
 .footer-image {
   width: 20%;
   height: 30px;
+}
+.mat-button {
+  width: 100%;
+  background: #5CD493;
+  color: white;
 }

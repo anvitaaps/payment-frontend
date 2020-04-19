@@ -23,3 +23,8 @@ a {
     /* text-decoration: underline !important; */
     cursor: pointer;
 }
+
+.primary-button {
+  background: #5CD493 !important;
+  color: white !important;
+}

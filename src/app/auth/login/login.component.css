@@ -1,0 +1,78 @@
+.background-content{
+    font-family: 'Lato', sans-serif;
+
+}
+
+.login-panel{
+    background-color: whitesmoke;
+    min-height: 100vh;;
+
+}
+
+.login{
+    margin-top: 5%;
+}
+.custom-text-color{
+    color: #6a4ee1;
+}
+.custom-input-background-color{
+    background-color: #6a4ee1!important;
+    color: white!important;
+}
+.custom-input-background-color::placeholder {
+    color: white;
+}
+.custom-button-background-color {
+    background-color: #6a4ee1!important;
+    color: white!important;
+    border: none;
+    transition: 0.3s all;
+ 
+}
+.custom-button-background-color:hover{
+    border-bottom: 10px solid white!important;
+
+}
+
+.button-active{
+    border-bottom: 10px solid white!important;
+
+}
+
+.logo{
+    margin-top: 45%;
+    margin-left: 5%;
+    transform: translate(0, -50%);
+}
+
+.logo-class {
+    background-image: linear-gradient(90deg, #b87df9, #6a4ee1);
+}
+
+.text-white {
+    color: white;
+}
+
+.example-card {
+    width: max-content;
+    height: max-content;
+    /* max-width: 600px; */
+    /* padding: 5vh !important; */
+}
+
+.mat-card .mat-card-header {
+    background-color: #6a4ee1 !important;
+    color: white;
+}
+
+.center{
+  width: 75%;
+  margin: 10px auto;
+}
+
+.main-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
