@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { DemoMaterialModule } from '../demo-material-module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ChartistModule } from 'ng-chartist';
@@ -19,6 +19,12 @@ import { InvoiceListComponent } from './invoice-list/invoice-list.component';
     // MatCardModule,
     MatProgressSpinnerModule,
     RouterModule.forChild(InvoiceRoutes)
+  ],
+  providers: [
+    {
+      provide: LocationStrategy,
+      useClass: HashLocationStrategy
+    }
   ],
   declarations: [CreateInvoiceComponent, InvoiceListComponent]
 })

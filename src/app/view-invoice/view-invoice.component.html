@@ -97,6 +97,6 @@
     </mat-card>
 </div>
 
-<div class="bottom-div" align="center">
+<div class="bottom-div" align="center" *ngIf="invoice?.status == 'Pending'">
     <button mat-button class="pay-button" (click)="pay()">PAY</button>
 </div>

@@ -100,7 +100,7 @@
   height: 30px;
 }
 .mat-button {
-  width: 100%;
+  /* width: 100%; */
   background: #5CD493;
   color: white;
 }
