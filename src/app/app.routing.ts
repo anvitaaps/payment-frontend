@@ -20,7 +20,7 @@ export const AppRoutes: Routes = [
       // },
       {
         path: '',
-        redirectTo: '/invoice',
+        redirectTo: '/login',
         pathMatch: 'full'
       },
       {
