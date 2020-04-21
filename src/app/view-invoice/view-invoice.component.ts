@@ -77,6 +77,6 @@ export class ViewInvoiceComponent implements OnInit {
   }
 
   view_receipt() {
-    window.open('http://localhost:3000/checkouts/new_checkout/'+this.invoice.transaction_id,'_blank');
+    window.open(this.url+'checkouts/new_checkout/'+this.invoice.transaction_id,'_blank');
   }
 }
