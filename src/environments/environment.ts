@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  api_endpoint: 'http://payments.starkflow.co/api/'
+  api_endpoint: 'http://localhost:3000/'
 };

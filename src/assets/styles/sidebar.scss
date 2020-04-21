@@ -90,8 +90,8 @@ use profile section
         padding: 31px 0;
         border-radius: 100%;
         &::before {
-            -webkit-animation: 2.5s blow 0s linear infinite;
-            animation: 2.5s blow 0s linear infinite;
+            // -webkit-animation: 2.5s blow 0s linear infinite;
+            // animation: 2.5s blow 0s linear infinite;
             position: absolute;
             content: '';
             width: 50px;
