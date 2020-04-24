@@ -19,6 +19,7 @@ import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
 import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ViewReceiptComponent } from './view-receipt/view-receipt.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { LoginComponent } from './auth/login/login.component';
     SpinnerComponent,
     AppSidebarComponent,
     ViewInvoiceComponent,
-    LoginComponent
+    LoginComponent,
+    ViewReceiptComponent
   ],
   imports: [
     BrowserModule,

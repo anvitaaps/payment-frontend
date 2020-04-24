@@ -1,6 +1,6 @@
 <!-- <p>create-invoice works!</p> -->
 <div class="main-div">
-    <mat-card class="example-card">
+    <mat-card class="example-card" id="export-div">
         
         <mat-card-header>
             <!-- <div class="section top-section grade-3"> -->
@@ -23,7 +23,7 @@
             <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="mt-2 pb-4">
                 <div fxLayout="col" fxFlex="70" class="heading">
                     <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100">
-                        <div fxLayout="col" fxFlex="50" class="heading">{{invoice.invoice_date ? (invoice.invoice_date | date : 'MMM d, y, h:mm a') : 'No date'}} </div>
+                        <div fxLayout="col" fxFlex="50" class="heading">{{invoice?.invoice_date ? (invoice.invoice_date | date : 'MMM d, y, h:mm a') : 'No date'}} </div>
                         <div fxLayout="col" fxFlex="50" class="heading">{{ invoice ? invoice.invoice_id : '' }}</div>
                     </div>
                 </div>
@@ -39,7 +39,10 @@
                     <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100">{{ invoice ? invoice.customer_name : '' }}</div>
                 </div>
             </div>
-            <img src="https://uploads-ssl.webflow.com/5e89c00abebe7dcfb5042125/5e89c00a0b4db15efaa88834_wave-bottom-haze.svg" class="wave-bottom">
+            <div id="imageContainer">
+                <img src="https://uploads-ssl.webflow.com/5e89c00abebe7dcfb5042125/5e89c00a0b4db15efaa88834_wave-bottom-haze.svg" id="" class="wave-bottom">
+            </div>
+            
         </mat-card-header>
         
         <mat-card-content class="mt-4">
@@ -84,19 +87,21 @@
             </div>
         </mat-card-content>
         <!-- <hr> -->
-        <mat-card-actions *ngIf="invoice?.status == 'Pending'">
-            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="pt-2 pb-2">
+        <mat-card-actions>
+            <div fxLayout="row" fxLayoutWrap="wrap" fxFlex="100" class="pt-2 pb-1">
                 <div fxLayout="col" fxFlex="55" fxLayoutAlign="end">
-                    <img class="footer-image" src="/assets/images/stark-logo.png" style="width:20%">
+                    <img class="footer-image" src="/assets/images/stark-logo.png">
                 </div>
                 <div fxLayout="col" fxFlex="45" fxLayoutAlign="end" class="mr-4">
-                    <a class="mr-2">starkflow.com</a>
+                    <a class="mr-2" style="color: white" target="_blank" href="https://www.starkflow.co/">starkflow.co</a>
                 </div>
             </div>
         </mat-card-actions>
     </mat-card>
 </div>
 
-<div class="bottom-div" align="center" *ngIf="invoice?.status == 'Pending'">
-    <button mat-button class="pay-button" (click)="pay()">PAY</button>
+<div class="bottom-div" align="center">
+    <button mat-button class="pay-button" (click)="pay()" *ngIf="invoice?.status == 'Pending'">PAY</button>
+    <button mat-button class="pay-button" (click)="downloadPng()">Download as PNG</button>
+    <button mat-button class="pay-button" (click)="downloadPdf()">Download as PDF</button>
 </div>

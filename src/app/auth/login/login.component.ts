@@ -26,10 +26,10 @@ export class LoginComponent implements OnInit {
 
   authenticate() {
     let data = {
-      email: this.loginForm.value.email,
-      password: this.loginForm.value.password
+      user_email: this.loginForm.value.email,
+      user_password: this.loginForm.value.password
     }
-    this.httpservice.post(this.url+'get_user_by_mail',data).subscribe((res)=> {
+    this.httpservice.post(this.url+'auth_login',data).subscribe((res)=> {
       console.log("response",res);  
       this.snackBar.open(res.message, '', {
         duration: 2000,
