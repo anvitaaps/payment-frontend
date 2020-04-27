@@ -47,8 +47,8 @@ export class InvoiceListComponent implements OnInit {
   }
 
   view_invoice(id) {
-    const url = this.router.serializeUrl(this.router.createUrlTree(['view-invoice'], { queryParams: { invoice_id: id} }));
-      window.open(url, '_blank');
+    const url = this.router.serializeUrl(this.router.createUrlTree(['view/view-invoice'], { queryParams: { invoice_id: id} }));
+      window.open('#'+url, '_blank');
     // this.router.navigate(['view-invoice'],{ queryParams: { invoice_id: id}})
   }
 

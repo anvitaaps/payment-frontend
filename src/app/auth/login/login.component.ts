@@ -4,6 +4,7 @@ import { HttpService } from '../../services/http.service';
 import { environment } from '../../../environments/environment';
 import { MatSnackBar } from '@angular/material';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ export class LoginComponent implements OnInit {
 
   url;
   
-  constructor(private httpservice: HttpService, public snackBar: MatSnackBar, private router: Router) { }
+  constructor(private httpservice: HttpService, public snackBar: MatSnackBar, private router: Router, private AuthService: AuthService) { 
+    if (AuthService.isAuthenticated())
+    this.router.navigateByUrl('invoice/create-invoice')
+  }
   loginForm = new FormGroup({
     email: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]),
     password: new FormControl('',Validators.required),
@@ -35,7 +39,7 @@ export class LoginComponent implements OnInit {
         duration: 2000,
       }); 
       sessionStorage.setItem('token', res.token)
-      this.router.navigateByUrl('invoice/(create-invoice)')
+      this.router.navigateByUrl('invoice/create-invoice')
     },
     (error)=>{
         console.log(error);

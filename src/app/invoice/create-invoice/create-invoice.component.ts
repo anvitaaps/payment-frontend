@@ -52,8 +52,8 @@ export class CreateInvoiceComponent implements OnInit {
       // this.invoiceForm.markAsPristine();
       // this.invoiceForm.markAsUntouched();
       this.invoiceForm.reset();
-      const url = this.router.serializeUrl(this.router.createUrlTree(['view-invoice'], { queryParams: { invoice_id: res.invoice_id} }));
-      window.open(url, '_blank');
+      const url = this.router.serializeUrl(this.router.createUrlTree(['view/view-invoice'], { queryParams: { invoice_id: res.invoice_id} }));
+      window.open('#'+url, '_blank');
       // this.router.navigate(['view-invoice'],{ queryParams: { invoice_id: res.invoice_id}})
     },
     (error)=>{

@@ -2,14 +2,16 @@ import { Routes } from '@angular/router';
 
 import { FullComponent } from './layouts/full/full.component';
 import { CreateInvoiceComponent } from './invoice/create-invoice/create-invoice.component';
-import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ViewReceiptComponent } from './view-receipt/view-receipt.component';
 // import { ViewInvoiceComponent } from './invoice/view-invoice/view-invoice.component';
 
 export const AppRoutes: Routes = [
-  { path: 'view-invoice', component: ViewInvoiceComponent , data: {invoice_id: String}},
-  { path: 'view-receipt', component: ViewReceiptComponent , data: {trasanction_id: String}},
+  {
+    path: 'view',
+    loadChildren: () => import('./view-receipt-invoice/view-receipt-invoice.module').then(m => m.ViewReceiptInvoiceModule)
+  },
+  // { path: 'view-invoice', component: ViewInvoiceComponent , data: {invoice_id: String}},
+  // { path: 'view-receipt', component: ViewReceiptComponent , data: {trasanction_id: String}},
   { path: 'login', component: LoginComponent},
   {
     path: '',

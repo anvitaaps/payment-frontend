@@ -10,6 +10,7 @@ File: scss
  Topbar
 *******************/
 mat-toolbar{
+  background-image: linear-gradient(90deg, #b87df9, #6a4ee1) !important;
     box-shadow: 1px 0px 10px rgba(0, 0, 0, 0.5);
     &.topbar{
         padding: 0px 15px;

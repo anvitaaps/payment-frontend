@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { LocationStrategy, PathLocationStrategy, HashLocationStrategy } from '@angular/common';
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 
@@ -17,9 +17,9 @@ import { DemoMaterialModule } from './demo-material-module';
 
 import { SharedModule } from './shared/shared.module';
 import { SpinnerComponent } from './shared/spinner.component';
-import { ViewInvoiceComponent } from './view-invoice/view-invoice.component';
 import { LoginComponent } from './auth/login/login.component';
-import { ViewReceiptComponent } from './view-receipt/view-receipt.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,7 @@ import { ViewReceiptComponent } from './view-receipt/view-receipt.component';
     AppHeaderComponent,
     SpinnerComponent,
     AppSidebarComponent,
-    ViewInvoiceComponent,
-    LoginComponent,
-    ViewReceiptComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -46,8 +44,9 @@ import { ViewReceiptComponent } from './view-receipt/view-receipt.component';
   providers: [
     {
       provide: LocationStrategy,
-      useClass: PathLocationStrategy
-    }
+      useClass: HashLocationStrategy
+    },
+    AuthGuardService, AuthService
   ],
   bootstrap: [AppComponent]
 })

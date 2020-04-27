@@ -24,7 +24,8 @@
 <mat-nav-list appAccordion>
     <mat-list-item appAccordionLink *ngFor="let menuitem of menuItems.getMenuitem()" routerLinkActive="selected">
         <ng-container *ngIf="menuitem.type === 'link'">
-            <a class="" appAccordionToggle [routerLink]="menuitem.state" >
+            <!-- [routerLink]="menuitem.state" -->
+            <a class="" appAccordionToggle (click)="goto(menuitem.state)" >
                 <mat-icon>{{ menuitem.icon }}</mat-icon> 
                 <span>{{ menuitem.name }}</span> 
                 <span fxFlex></span> 
@@ -32,7 +33,7 @@
             </a>
         </ng-container>
         <ng-container *ngIf="menuitem.type != 'link'">
-            <a class="" appAccordionToggle [routerLink]="menuitem.state">
+            <a class="" appAccordionToggle (click)="goto(menuitem.state)">
                 <mat-icon>{{ menuitem.icon }}</mat-icon> 
                 <span>{{ menuitem.name }}</span> 
                 <span fxFlex></span> 
